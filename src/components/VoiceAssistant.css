@@ -1,0 +1,273 @@
+body {
+  background-color: #f0f8ff;
+  font-family: 'Poppins', 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.voice-assistant {
+  max-width: 1000px;
+  height: 600px; /* Fixed height */
+  margin: 20px auto;
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 300px;
+  background-color: #6a5acd;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.user-name {
+  font-size: 1.2em;
+  background-color: #ff69b4;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #e6e6fa;
+  max-width: 700px;
+  height: 600px; /* Fixed height */
+}
+
+.chat-header {
+  padding: 20px;
+  background-color: #ff69b4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+}
+
+.chat-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #e6e6fa;
+  height: 400px; /* Fixed height */
+}
+
+.message {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message-content {
+  max-width: 70%;
+  padding: 12px 18px;
+  border-radius: 20px;
+  font-size: 1em;
+  line-height: 1.4;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  word-wrap: break-word; /* Ensure long words don't overflow */
+}
+
+.message.bot .message-content {
+  background-color: #00ced1;
+  color: white;
+}
+
+.message.user .message-content {
+  background-color: #ff69b4;
+  color: white;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.controls {
+  padding: 20px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cancel-button {
+  padding: 10px 20px;
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1em;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.cancel-button:hover {
+  background-color: #ff6347;
+  transform: translateY(-2px);
+}
+
+.listening-indicator {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1em;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.listening-indicator.active {
+  background-color: #32cd32;
+  color: white;
+  animation: pulse 1.5s infinite;
+}
+
+.playing-indicator {
+  text-align: center;
+  font-style: italic;
+  color: #4b0082;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.welcome-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #e6e6fa;
+}
+
+.welcome-screen h1 {
+  font-size: 3em;
+  color: #6a5acd;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.welcome-screen button {
+  font-size: 1.2em;
+  padding: 15px 30px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.welcome-screen button:hover {
+  background-color: #ff1493;
+  transform: translateY(-3px);
+}
+
+.stop-button {
+  padding: 10px 20px;
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1em;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-left: 10px;
+}
+
+.stop-button:hover {
+  background-color: #ff6347;
+  transform: translateY(-2px);
+}
+
+/* Add these new styles for the buttons */
+.speak-button, .stop-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+
+.speak-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.stop-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.speak-button:hover, .stop-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.status-indicator {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.status-indicator.listening {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.status-indicator.playing {
+  background-color: #2196F3;
+  color: white;
+}
+
+/* Add these styles for markdown rendering */
+.markdown-list {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.markdown-list-item {
+  margin-bottom: 5px;
+}
