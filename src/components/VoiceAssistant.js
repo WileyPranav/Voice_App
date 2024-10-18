@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { generateResponse } from '../services/textInference';
 import { synthesizeSpeech } from '../services/textToSpeech';
 import { transcribeAudio } from '../services/speechToText';
+
 import './VoiceAssistant.css';
 
 function VoiceAssistant() {
